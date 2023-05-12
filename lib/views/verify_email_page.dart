@@ -64,7 +64,7 @@ class _VerifyEmailPAgeState extends State<VerifyEmailPAge> {
 
   @override
   Widget build(BuildContext context) => isEmailVerified
-      ? Home()
+      ? HomePage()
       : Scaffold(
           appBar: AppBar(
             title: Text('Verify Email'),
@@ -87,7 +87,7 @@ class _VerifyEmailPAgeState extends State<VerifyEmailPAge> {
               SizedBox(height: 15),
               TextButton(
                 onPressed: () => FirebaseAuth.instance.signOut(),
-                child: Text('Cancel'),
+                child: Text('Go to Login page'),
               )
             ]),
           ),
