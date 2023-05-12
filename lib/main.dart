@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       scaffoldMessengerKey: Utils.messengerKey,
       debugShowCheckedModeBanner: false,
       navigatorKey: navigatorKey,
-      title: 'Firebase app',
+      title: 'Firebase app with notifications',
       home: MainPage(),
     );
   }
