@@ -1,4 +1,4 @@
-# firebase_sample
+# Login with firebase notifications
 
 A new Flutter project.
 
