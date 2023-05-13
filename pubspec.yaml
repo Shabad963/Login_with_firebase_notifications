@@ -29,10 +29,12 @@ environment:
 dependencies:
   cloud_firestore: ^3.1.17
   cupertino_icons: ^1.0.2
-  dio: ^4.0.6
   email_validator: ^2.0.1
+  firebase_messaging:
   firebase_auth: ^3.3.19
   firebase_core: ^1.17.1
+  flutter_local_notifications:
+  http:
   flutter:
     sdk: flutter
   json_annotation: ^4.6.0

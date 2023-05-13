@@ -24,7 +24,7 @@ class _ForgotPassWordPageState extends State<ForgotPassWordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: lightBlueAccent,
         title: Text('Reset Password'),
       ),
       body: Padding(
@@ -59,7 +59,7 @@ class _ForgotPassWordPageState extends State<ForgotPassWordPage> {
               ),
               style: TextButton.styleFrom(
                   minimumSize: Size.fromHeight(40),
-                  backgroundColor: Colors.teal),
+                  backgroundColor: lightBlueAccent),
               icon: Icon(Icons.email_outlined),
             ),
           ]),

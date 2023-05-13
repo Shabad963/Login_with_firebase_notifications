@@ -64,11 +64,11 @@ class _VerifyEmailPAgeState extends State<VerifyEmailPAge> {
 
   @override
   Widget build(BuildContext context) => isEmailVerified
-      ? HomePage()
+      ? MyHomePage(title: 'kkk',)
       : Scaffold(
           appBar: AppBar(
             title: Text('Verify Email'),
-            backgroundColor: Colors.teal,
+            backgroundColor: lightBlueAccent,
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -79,7 +79,7 @@ class _VerifyEmailPAgeState extends State<VerifyEmailPAge> {
               ElevatedButton.icon(
                   style: TextButton.styleFrom(
                       minimumSize: Size.fromHeight(40),
-                      backgroundColor: Colors.teal),
+                      backgroundColor: lightBlueAccent),
                   onPressed: () =>
                       canResendEmail ? sendVerificationEmail() : null,
                   icon: Icon(Icons.email),

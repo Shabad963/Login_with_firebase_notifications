@@ -8,10 +8,12 @@ class Utils {
 
     final snackbar = SnackBar(
       content: Text(text),
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.grey,
     );
     messengerKey.currentState!
       ..removeCurrentSnackBar()
       ..showSnackBar(snackbar);
   }
 }
+
+const Color lightBlueAccent = Colors.lightBlueAccent;

@@ -32,7 +32,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Sign up'),
-        backgroundColor: Colors.teal,
+        backgroundColor: lightBlueAccent,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -45,7 +45,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 height: 80,
               ),
               Image.network(
-                  "https://icons.iconarchive.com/icons/papirus-team/papirus-apps/128/system-users-icon.png"),
+                  "https://icon-library.com/images/login-icon-images/login-icon-images-6.jpg",width: 200,),
               SizedBox(
                 height: 20,
               ),
@@ -85,7 +85,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
                 style: TextButton.styleFrom(
                     minimumSize: Size.fromHeight(40),
-                    backgroundColor: Colors.teal),
+                    backgroundColor: lightBlueAccent),
                 icon: Icon(Icons.arrow_forward),
               ),
               SizedBox(
@@ -100,7 +100,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         recognizer: TapGestureRecognizer()
                           ..onTap = widget.onClickedSignIn,
                         text: 'Log In',
-                        style: TextStyle(color: Colors.teal))
+                        style: TextStyle(color: lightBlueAccent))
                   ]))
             ],
           ),

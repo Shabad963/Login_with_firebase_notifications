@@ -33,7 +33,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Log in'),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
@@ -41,7 +41,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-                "https://icons.iconarchive.com/icons/papirus-team/papirus-apps/128/system-users-icon.png"),
+                "https://icon-library.com/images/login-icon-images/login-icon-images-6.jpg",width: 200,),
             SizedBox(
               height: 20,
             ),
@@ -72,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               style: TextButton.styleFrom(
                   minimumSize: Size.fromHeight(40),
-                  backgroundColor: Colors.teal),
+                  backgroundColor: lightBlueAccent),
               icon: Icon(Icons.lock),
             ),
             SizedBox(
@@ -83,7 +83,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 'Forgot Password?',
                 style: TextStyle(
                     decoration: TextDecoration.underline,
-                    color: Colors.teal,
+                    color: lightBlueAccent,
                     fontSize: 20),
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -102,7 +102,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       recognizer: TapGestureRecognizer()
                         ..onTap = widget.onClickedSignUp,
                       text: 'SignUp',
-                      style: TextStyle(color: Colors.teal))
+                      style: TextStyle(color: lightBlueAccent))
                 ]))
           ],
         ),
