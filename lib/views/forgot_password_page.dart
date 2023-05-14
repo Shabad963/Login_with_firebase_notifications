@@ -23,10 +23,7 @@ class _ForgotPassWordPageState extends State<ForgotPassWordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: lightBlueAccent,
-        title: Text('Reset Password'),
-      ),
+      appBar: appBar(title: "Reset Password"),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

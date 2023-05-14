@@ -30,10 +30,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sign up'),
-        backgroundColor: lightBlueAccent,
-      ),
+      appBar: appBar(title: "SIGNUP"),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Form(
@@ -44,9 +41,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               SizedBox(
                 height: 80,
               ),
-              Image.network(
-                  "https://icon-library.com/images/login-icon-images/login-icon-images-6.jpg",width: 200,),
-              SizedBox(
+            const Text(
+                    'Welcome',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 50.0,
+                   height: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),SizedBox(
                 height: 20,
               ),
               TextFormField(

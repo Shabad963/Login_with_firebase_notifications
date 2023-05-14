@@ -11,7 +11,7 @@ import 'views/auth_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp( );
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 _firebaseMessaging.requestPermission();
 

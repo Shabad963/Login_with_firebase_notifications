@@ -17,3 +17,11 @@ class Utils {
 }
 
 const Color lightBlueAccent = Colors.lightBlueAccent;
+
+ AppBar appBar({required String title}) {
+    return AppBar(
+      centerTitle: true,
+      title: Text(title,style: TextStyle(color: Colors.black),),
+      backgroundColor: Colors.white,
+    );
+  }

@@ -64,7 +64,7 @@ class _VerifyEmailPAgeState extends State<VerifyEmailPAge> {
 
   @override
   Widget build(BuildContext context) => isEmailVerified
-      ? MyHomePage(title: 'kkk',)
+      ? MyHomePage(title: 'home',)
       : Scaffold(
           appBar: AppBar(
             title: Text('Verify Email'),
