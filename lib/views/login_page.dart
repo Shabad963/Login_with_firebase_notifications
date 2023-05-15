@@ -72,7 +72,6 @@ class _LoginWidgetState extends State<LoginWidget>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: appBar(title: "LOGIN"),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -80,7 +79,7 @@ class _LoginWidgetState extends State<LoginWidget>
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [  Colors.white,Colors.indigo],
+            colors: [Colors.white, Colors.indigo],
           ),
         ),
         padding: EdgeInsets.all(20),
@@ -102,7 +101,7 @@ class _LoginWidgetState extends State<LoginWidget>
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 50.0,
-                   height: 3,
+                      height: 3,
                       fontWeight: FontWeight.bold,
                     ),
                   )),
@@ -187,7 +186,8 @@ class _LoginWidgetState extends State<LoginWidget>
                               color: lightBlueAccent,
                               fontSize: 20),
                         ),
-                        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        onTap: () =>
+                            Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => ForgotPassWordPage(),
                         )),
                       ),
@@ -214,26 +214,48 @@ class _LoginWidgetState extends State<LoginWidget>
     );
   }
 
- 
-
   Future signIn() async {
-    showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => Center(
-              child: CircularProgressIndicator(),
-            ));
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+         showDialog<void>(
+          context: context,
+          barrierDismissible: true, // user must tap button!
+          builder: (BuildContext context) {
+            return AlertDialog(
+              // <-- SEE HERE
+              title: const Text('Please fill all fields'),
+              
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Ok'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
 
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: passwordController.text.trim());
-    } on FirebaseAuthException catch (e) {
-      print(e);
+              ],
+            );
+          },
+        );
+      
+    } else {
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => Center(
+                child: CircularProgressIndicator(),
+              ));
 
-      Utils.showSnackBar(e.message);
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim());
+      } on FirebaseAuthException catch (e) {
+        print(e);
+
+        Utils.showSnackBar(e.message);
+      }
+
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
     }
-
-    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }

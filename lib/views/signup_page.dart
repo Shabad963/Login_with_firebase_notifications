@@ -113,6 +113,32 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   }
 
   Future signUp() async {
+
+ if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+         showDialog<void>(
+          context: context,
+          barrierDismissible: true, // user must tap button!
+          builder: (BuildContext context) {
+            return AlertDialog(
+              // <-- SEE HERE
+              title: const Text('Please fill all fields'),
+              
+              actions: <Widget>[
+                TextButton(
+                  child: const Text('Ok'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+
+              ],
+            );
+          },
+        );
+      
+    } else {
+
+      
     final isValid = formKey.currentState!.validate();
     if (!isValid) return;
 
@@ -134,5 +160,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     }
 
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    }
+
   }
 }
